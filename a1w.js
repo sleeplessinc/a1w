@@ -19,6 +19,19 @@ A1W.google = {
 			});
 		},
 	},
+	sleepless: {
+		files: {
+			get: function( authkey, file, cb ) {
+				let args = { authkey, file };
+				request.get( "https://a1widgets.com/api/v1/sleepless/files/", args,  ( err, resp, body ) => {
+					log( resp );
+				});
+			},
+			put: function( auth_key, path, cb ) {
+				throw new Error( "not implemented" );
+			},
+		}
+	}
 };
 
 
