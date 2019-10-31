@@ -1,6 +1,6 @@
 {
   "name": "a1w",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A1Widgets NPM module",
   "main": "a1w.js",
   "scripts": {
