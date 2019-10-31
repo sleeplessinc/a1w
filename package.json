@@ -2,7 +2,7 @@
   "name": "a1w",
   "version": "1.0.0",
   "description": "A1Widgets NPM module",
-  "main": "index.js",
+  "main": "a1w.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/sleeplessinc/a1w/issues"
   },
-  "homepage": "https://github.com/sleeplessinc/a1w#readme"
+  "homepage": "https://github.com/sleeplessinc/a1w#readme",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
 }
