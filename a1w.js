@@ -11,26 +11,37 @@ if( module !== undefined ) {
 
 A1W.google = {
 	drive: {
-		document: function( doc_id, cb ) {
-			let url = "https://sleepless.com/api/?cmd=google/drive/document&key=" + doc_id;	// XXX
-			request( url, ( err, resp, body ) => {
-				//let o = { error: null, data: "doc_id=" + doc_id };
-				cb( body, err, resp );
-			});
-		},
-	},
-	sleepless: {
-		files: {
-			get: function( authkey, file, cb ) {
-				let args = { authkey, file };
-				request.get( "https://a1widgets.com/api/v1/sleepless/files/", args,  ( err, resp, body ) => {
+		document: {
+			get: function( doc_id, cb ) {
+				let url = "https://sleepless.com/api/?cmd=google/drive/document&key=" + doc_id;	// XXX endpoint is not final
+				request( url, ( err, resp, body ) => {
 					cb( body, err, resp );
 				});
 			},
-			put: function( auth_key, path, cb ) {
-				throw new Error( "not implemented" );
+		},
+		spreadsheet: {
+			get: function( doc_id, cb ) {
+				let url = "https://sleepless.com/api/?cmd=google/drive/spreadsheet&key=" + doc_id;	// XXX endpoint is not final
+				request( url, ( err, resp, body ) => {
+					cb( body, err, resp );
+				});
 			},
-		}
+		},
+	},
+};
+A1W.sleepless = {
+	files: {
+		get: function( authkey, file, cb ) {
+			let url = "https://a1widgets.com/api/v1/sleepless/files/"; // XXX endpoint is not final
+			url += "?authkey=" + encodeURIComponent( authkey );
+			url += "&file=" + encodeURIComponent( file );
+			request( url, ( err, resp, body ) => {
+				cb( body, err, resp );
+			});
+		},
+		put: function( auth_key, path, cb ) {
+			throw new Error( "not implemented" );
+		},
 	}
 };
 
