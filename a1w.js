@@ -14,7 +14,7 @@ A1W.google = {
 		document: function( doc_id, cb ) {
 			let url = "https://sleepless.com/api/?cmd=google/drive/document&key=" + doc_id;	// XXX
 			request( url, ( err, resp, body ) => {
-				let o = { error: null, data: "doc_id=" + doc_id };
+				//let o = { error: null, data: "doc_id=" + doc_id };
 				cb( body, err, resp );
 			});
 		},
@@ -24,7 +24,7 @@ A1W.google = {
 			get: function( authkey, file, cb ) {
 				let args = { authkey, file };
 				request.get( "https://a1widgets.com/api/v1/sleepless/files/", args,  ( err, resp, body ) => {
-					log( resp );
+					cb( body, err, resp );
 				});
 			},
 			put: function( auth_key, path, cb ) {
