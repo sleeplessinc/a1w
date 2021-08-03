@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/sleeplessinc/a1w#readme",
   "dependencies": {
-    "@google-cloud/firestore": "^2.6.0",
+    "@google-cloud/firestore": "^4.14.1",
     "request": "^2.88.0"
   }
 }
