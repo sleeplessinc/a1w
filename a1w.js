@@ -67,6 +67,13 @@ A1W.google = {
 			},
 		},
 	},
+
+	cloud: {
+		storage: {
+			firestore: {
+			},
+		},
+	},
 };
 
 
